@@ -14,7 +14,6 @@ pipeline {
         ENABLE_ZAP = 'false'
         SONAR_TOKEN = credentials('SONAR_TOKEN_ARJUN')
         BUILD_TIME = "${new Date().format('yyyy-MM-dd\'T\'HH:mm:ss')}"
-        OPENAI_API_KEY = credentials('OPENAI_API_KEY_ARJUN');
     }
 
     stages {
