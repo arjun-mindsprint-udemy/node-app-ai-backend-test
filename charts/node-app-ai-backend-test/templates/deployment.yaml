@@ -4,9 +4,6 @@ metadata:
   name: {{ include "node-app.fullname" . }}
   labels:
     {{- include "node-app.labels" . | nindent 4 }}
-env:
-  name: OPENAI_API_KEY
-  value: {{ .Values.env.OPENAI_API_KEY | quote }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -51,6 +48,9 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           {{- with .Values.livenessProbe }}
+          env:
+            - name: OPENAI_API_KEY
+              value: {{ .Values.env.OPENAI_API_KEY | quote }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
