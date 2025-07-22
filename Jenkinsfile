@@ -14,6 +14,7 @@ pipeline {
         ENABLE_ZAP = 'false'
         SONAR_TOKEN = credentials('SONAR_TOKEN_ARJUN')
         BUILD_TIME = "${new Date().format('yyyy-MM-dd\'T\'HH:mm:ss')}"
+        OPENAI_API_KEY = credentials('OPENAI_API_KEY_ARJUN');
     }
 
     stages {
@@ -126,7 +127,7 @@ pipeline {
                     def app_name = env.APP_NAME
                     def app_env = env.APP_ENV
                     bat """
-                        wsl helm upgrade --install ${app_name} ./charts/${app_name} -n ${app_env} --create-namespace --set image.tag=${commitId}
+                        wsl helm upgrade --install ${app_name} ./charts/${app_name} -n ${app_env} --create-namespace --set image.tag=${commitId} --set env.OPENAI_API_KEY=${env.OPENAI_API_KEY}
                     """
                 }
             }
