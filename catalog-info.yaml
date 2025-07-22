@@ -10,6 +10,9 @@ metadata:
 spec:
   type: service
   owner: development
+  system: ai-demo
   lifecycle: experimental
+  dependsOn:
+    - component: default/llm-module
   providesApis:
     - node-app-ai-backend-test-api
