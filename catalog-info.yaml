@@ -12,6 +12,6 @@ spec:
   owner: development
   lifecycle: experimental
   dependsOn:
-    - component:llm-module
+    - component:ai-backend/llm-module
   providesApis:
     - node-app-ai-backend-test-api
