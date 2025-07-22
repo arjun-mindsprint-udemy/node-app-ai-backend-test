@@ -3,6 +3,8 @@ image:
   repository: arjun150800/node-app-ai-backend-test
   pullPolicy: IfNotPresent
   tag: node-app-ai-backend-test-dev-latest
+env:
+  OPENAI_API_KEY: ""
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
