@@ -4,7 +4,7 @@ image:
   pullPolicy: IfNotPresent
   tag: node-app-ai-backend-test-dev-latest
 env:
-  OPENAI_API_KEY: ""
+  openaiApiKey: ""
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
