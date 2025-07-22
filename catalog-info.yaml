@@ -13,6 +13,6 @@ spec:
   system: ai-demo
   lifecycle: experimental
   dependsOn:
-    - component:default/llm-module
+    - component:development/llm-module
   providesApis:
     - node-app-ai-backend-test-api
