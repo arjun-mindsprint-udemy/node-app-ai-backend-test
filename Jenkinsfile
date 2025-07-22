@@ -126,8 +126,9 @@ pipeline {
                     def commitId = env.COMMIT_ID
                     def app_name = env.APP_NAME
                     def app_env = env.APP_ENV
+                    def openai_api_key = env.OPENAI_API_KEY
                     bat """
-                        wsl helm upgrade --install ${app_name} ./charts/${app_name} -n ${app_env} --create-namespace --set image.tag=${commitId} --set env.OPENAI_API_KEY=${env.OPENAI_API_KEY}
+                        wsl helm upgrade --install ${app_name} ./charts/${app_name} -n ${app_env} --create-namespace --set image.tag=${commitId} --set env.OPENAI_API_KEY=${openai_api_key}
                     """
                 }
             }
