@@ -11,5 +11,7 @@ spec:
   type: service
   owner: development
   lifecycle: experimental
+  dependsOn:
+    - component:llm-module
   providesApis:
     - node-app-ai-backend-test-api
